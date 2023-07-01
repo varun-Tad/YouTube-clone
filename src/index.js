@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./context/SidebarContext";
+import { SearchProvider } from "./context/SearchContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <SidebarProvider>
-      <App />
-    </SidebarProvider>
+    <SearchProvider>
+      <SidebarProvider>
+        <App />
+      </SidebarProvider>
+    </SearchProvider>
   </React.StrictMode>
 );
 
