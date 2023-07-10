@@ -5,15 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./context/SidebarContext";
 import { SearchProvider } from "./context/SearchContext";
+import { ChatProvider } from "./context/ChatContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SearchProvider>
       <SidebarProvider>
-        <App />
+        <ChatProvider>
+          <App />
+        </ChatProvider>
       </SidebarProvider>
     </SearchProvider>
+    {/* </ChatProvider> */}
   </React.StrictMode>
 );
 
